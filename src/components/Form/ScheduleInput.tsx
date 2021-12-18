@@ -72,7 +72,7 @@ const ScheduleInput = (): JSX.Element => {
                 className="form__input"
                 placeholder="Abre a las"
                 onChange={(e) => setIsChecked(e.currentTarget.checked)}
-                disabled={isChecked ? false : true}
+                disabled={isChecked}
               />
               <span>-</span>
               <input
@@ -85,7 +85,7 @@ const ScheduleInput = (): JSX.Element => {
               />
 
               <ErrorMessage
-                name="monday"
+                name="monday.startTime"
                 component="span"
                 className="form__error"
               />
