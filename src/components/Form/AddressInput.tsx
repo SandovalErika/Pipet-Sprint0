@@ -31,6 +31,9 @@ const AddressInput = (): JSX.Element => {
     }, 500);
   };
 
+  console.log(onSubmit);
+
+
   return (
     <>
       <h2>Formulario</h2>
@@ -39,7 +42,7 @@ const AddressInput = (): JSX.Element => {
         onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
-        <Form className="form">
+        <Form className="form" method="post" >
           <label className="form__label">
             <Field
               name="street"
@@ -139,7 +142,7 @@ const AddressInput = (): JSX.Element => {
           />
           <br />
           <button type="submit" className="btn">
-            Submit!
+            Enviar
           </button>
         </Form>
       </Formik>

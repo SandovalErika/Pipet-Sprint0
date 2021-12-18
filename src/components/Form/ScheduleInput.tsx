@@ -32,18 +32,6 @@ const ScheduleInput = (): JSX.Element => {
   };
 
   const [isChecked, setIsChecked] = useState(true);
-  //    const open = () =>{
-  //   if (isChecked){
-  //     return "Abierto"
-  //   }
-  // }
-
-  // const close = () =>{
-  //   if (isChecked){
-  //     return "Cerrado"
-  //   }
-  // }
-
   const [isChecked2, setIsChecked2] = useState(true);
   const [isChecked3, setIsChecked3] = useState(true);
   const [isChecked4, setIsChecked4] = useState(true);
@@ -62,7 +50,7 @@ const ScheduleInput = (): JSX.Element => {
         validationSchema={validationSchema}
 
       >
-        <Form className="form">
+        <Form className="form" method="post">
           <label className="containerOption">
             <p>Lunes</p>
             <label className="switch" >
@@ -84,7 +72,7 @@ const ScheduleInput = (): JSX.Element => {
                 className="form__input"
                 placeholder="Abre a las"
                 onChange={(e) => setIsChecked(e.currentTarget.checked)}
-                disabled={isChecked}
+                disabled={isChecked ? false : true}
               />
               <span>-</span>
               <input
@@ -302,7 +290,11 @@ const ScheduleInput = (): JSX.Element => {
               />
 
             </label>
+
           </label>
+          <button type="submit" className="btn">
+            Enviar
+          </button>
 
         </Form>
       </Formik>
